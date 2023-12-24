@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
-import { AddEmployeeComponent } from './add-employee/add-employee.component';
-import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
-import { HomeComponent } from './home/home.component';
-import { ViewEmployeeComponent } from './view-employee/view-employee.component';
-
+  
+import { IndexComponent } from './employee/index/index.component';
+import { ViewComponent } from './employee/view/view.component';
+import { CreateComponent } from './employee/create/create.component';
+import { EditComponent } from './employee/edit/edit.component';
+  
 export const routes: Routes = [
-    { path: '', redirectTo: 'Home', pathMatch: 'full'},
-    { path: 'Home', component: HomeComponent },
-    { path: 'ViewEmployee/:employeeId', component: ViewEmployeeComponent },
-    { path: 'AddEmployee', component: AddEmployeeComponent },
-    { path: 'EditEmployee/:employeeId', component: EditEmployeeComponent } 
+      { path: 'employee', redirectTo: 'employee/index', pathMatch: 'full'},
+      { path: 'employee/index', component: IndexComponent },
+      { path: 'employee/:employeeId/view', component: ViewComponent },
+      { path: 'employee/create', component: CreateComponent },
+      { path: 'employee/:employeeId/edit', component: EditComponent } 
   ];
