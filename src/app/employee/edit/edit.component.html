@@ -1,17 +1,11 @@
-<div class="container-xl">
-    <div class="table-responsive overflow-x-hidden">
-      <div class="table-wrapper">
-        <div class="table-title my-5">
-          <div class="row">
-            <div class="col-sm-6">
-              <h4><b>Update Employee</b></h4>
-            </div>
-            <div class="col-sm-6">
-              <a href="#" routerLink="/" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
-                 Back</a>
-            </div>
-          </div>
-        </div>
+  <div class="container-md">
+    <div class="card m-5">
+      <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center py-3">
+        <b>Edit Employee</b>
+        <a href="#" routerLink="/" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+          Back</a>
+      </div>
+      <div class="card-body p-5">
         <form [formGroup]="form" (ngSubmit)="submit()">
           <div class="table-content">
             <div class="form-group p-10 row my-2">
@@ -63,8 +57,8 @@
               </div>
             </div>
           </div>
-          <div class="table-footer">
-            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Update</button>
+          <div class="table-footer text-center mt-4">
+            <button class="btn btn-success" type="submit" [disabled]="!form.valid">Update</button>
         </div>
         </form>
       </div>
