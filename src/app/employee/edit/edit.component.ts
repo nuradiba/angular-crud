@@ -37,8 +37,8 @@ export class EditComponent {
    */
   ngOnInit(): void {
     this.id = this.route.snapshot.params['employeeId'];
-    this.employeeService.find(this.id).subscribe((data: Employee)=>{
-      this.employee = data;
+    this.employeeService.find(this.id).subscribe((data)=>{
+      this.employee = data.data;
     }); 
         
     this.form = new FormGroup({
