@@ -1,13 +1,25 @@
-<div class="container">
-    <h1>Create New Employee</h1>
-  
-    <a href="#" routerLink="/employee/index" class="btn btn-primary">Back</a>
-        
-    <form [formGroup]="form" (ngSubmit)="submit()">
-  
-        <div class="form-group">
-            <label for="employee_name">Employee Name:</label>
-            <input 
+<div class="container-md">
+    <div class="table-responsive overflow-x-hidden">
+      <div class="table-wrapper">
+        <div class="table-title my-5">
+          <div class="row">
+            <div class="col-sm-6">
+              <h4><b>Create New Employee</b></h4>
+            </div>
+            <div class="col-sm-6">
+              <a href="#" routerLink="/" class="btn btn-success back"><i class='fas fa-arrow-circle-left'></i>
+                 Back</a>
+            </div>
+          </div>
+        </div>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="table-content">
+            <div class="form-group p-10 row my-2">
+              <div class="col-sm-3">
+                <label for="FirstName" class="p-t-b-10">Employee Name<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input 
                 formControlName="employee_name"
                 id="employee_name" 
                 type="text" 
@@ -15,11 +27,14 @@
             <div *ngIf="f['employee_name'].touched && f['employee_name'].invalid" class="alert alert-danger">
                 <div *ngIf="f['employee_name'].errors && f['employee_name'].errors['required']">Employee name is required.</div>
             </div>
-        </div>
-  
-        <div class="form-group">
-            <label for="employee_age">Employee Age: </label>
-            <input 
+              </div>
+            </div>
+            <div class="form-group p-10 row my-2">
+              <div class="col-sm-3">
+                <label for="LastName" class="p-t-b-10">Employee Age<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input 
                 formControlName="employee_age"
                 id="employee_age" 
                 type="number" 
@@ -27,11 +42,14 @@
             <div *ngIf="f['employee_age'].touched && f['employee_age'].invalid" class="alert alert-danger">
                 <div *ngIf="f['employee_age'].errors && f['employee_age'].errors['required']">Employee age is required.</div>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label for="employee_salary">Employee Salary: </label>
-            <input 
+              </div>
+            </div>
+            <div class="form-group p-10 row my-2">
+              <div class="col-sm-3">
+                <label class="p-t-b-10">Employee Salary<span class="requiredStar">*</span></label>
+              </div>
+              <div class="col-sm-9">
+                <input 
                 formControlName="employee_salary"
                 id="employee_salary" 
                 type="number" 
@@ -39,8 +57,13 @@
             <div *ngIf="f['employee_salary'].touched && f['employee_salary'].invalid" class="alert alert-danger">
                 <div *ngIf="f['employee_salary'].errors && f['employee_salary'].errors['required']">Employee salary is required.</div>
             </div>
+              </div>
+            </div>
+          </div>
+          <div class="table-footer">
+            <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
         </div>
-  
-        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
-    </form>
-</div>
+        </form>
+      </div>
+    </div>
+  </div>
