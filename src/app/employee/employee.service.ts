@@ -11,18 +11,7 @@ import { Employee } from './employee';
 })
 export class EmployeeService {
   
-  private apiURL = "https://dummy.restapiexample.com/api/v1";
-    
-  /*------------------------------------------
-  --------------------------------------------
-  Http Header Options
-  --------------------------------------------
-  --------------------------------------------*/
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
+  private apiURL = "https://www.dummy.restapiexample.com/api/v1";
    
   /*------------------------------------------
   --------------------------------------------
@@ -51,7 +40,7 @@ export class EmployeeService {
    */
   create(employee:Employee): Observable<any> {
   
-    return this.httpClient.post(this.apiURL + '/create/', JSON.stringify(employee), this.httpOptions)
+    return this.httpClient.post(this.apiURL + '/create/', JSON.stringify(employee))
   
     .pipe(
       catchError(this.errorHandler)
@@ -79,7 +68,7 @@ export class EmployeeService {
    */
   update(id:number, employee:Employee): Observable<any> {
   
-    return this.httpClient.put(this.apiURL + '/update/' + id, JSON.stringify(employee), this.httpOptions)
+    return this.httpClient.put(this.apiURL + '/update/' + id, JSON.stringify(employee))
  
     .pipe( 
       catchError(this.errorHandler)
@@ -92,7 +81,7 @@ export class EmployeeService {
    * @return response()
    */
   delete(id:number){
-    return this.httpClient.delete(this.apiURL + '/delete/' + id, this.httpOptions)
+    return this.httpClient.delete(this.apiURL + '/delete/' + id)
   
     .pipe(
       catchError(this.errorHandler)

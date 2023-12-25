@@ -29,9 +29,12 @@ export class IndexComponent {
    * @return response()
    */
   ngOnInit(): void {
+    console.log('Before API')
     this.employeeService.getAll().subscribe((data: Employee[])=>{
+      console.log('Successfully access API')
       this.employees = data;
     })
+    console.log('After API')
   }
       
   /**
